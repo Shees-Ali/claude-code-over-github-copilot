@@ -1,3 +1,6 @@
+litellm_settings:
+  drop_params: true  # Drop unsupported parameters like 'thinking' for GitHub Copilot
+
 model_list:
   - model_name: gpt-4
     litellm_params:
@@ -7,3 +10,47 @@ model_list:
     litellm_params:
       model: github_copilot/claude-sonnet-4
       extra_headers: {"Editor-Version": "vscode/1.85.1", "Copilot-Integration-Id": "vscode-chat"}
+    # Claude Sonnet 4 (Anthropic) - enabled
+    # Max tokens: 16000, Context: 216000
+
+  - model_name: claude-sonnet-4.5
+    litellm_params:
+      model: github_copilot/claude-sonnet-4.5
+      extra_headers: {"Editor-Version": "vscode/1.85.1", "Copilot-Integration-Id": "vscode-chat"}
+    # Claude Sonnet 4.5 (Anthropic) - enabled
+    # Max tokens: 32000, Context: 144000
+
+  - model_name: claude-sonnet-4-5-20250929
+    litellm_params:
+      model: github_copilot/claude-sonnet-4.5
+      extra_headers: {"Editor-Version": "vscode/1.85.1", "Copilot-Integration-Id": "vscode-chat"}
+    # Claude Sonnet 4.5 with date version - maps to same endpoint
+    # Max tokens: 32000, Context: 144000
+
+  - model_name: claude-sonnet-4-6
+    litellm_params:
+      model: github_copilot/claude-sonnet-4.5
+      extra_headers: {"Editor-Version": "vscode/1.85.1", "Copilot-Integration-Id": "vscode-chat"}
+    # Claude Sonnet 4.6 alias - maps to claude-sonnet-4.5 (latest available in GitHub Copilot)
+    # Max tokens: 32000, Context: 144000
+
+  - model_name: claude-opus-4.5
+    litellm_params:
+      model: github_copilot/claude-opus-4.5
+      extra_headers: {"Editor-Version": "vscode/1.85.1", "Copilot-Integration-Id": "vscode-chat"}
+    # Claude Opus 4.5 (Anthropic) - enabled
+    # Max tokens: 32000, Context: 160000
+
+  - model_name: claude-haiku-4.5
+    litellm_params:
+      model: github_copilot/claude-haiku-4.5
+      extra_headers: {"Editor-Version": "vscode/1.85.1", "Copilot-Integration-Id": "vscode-chat"}
+    # Claude Haiku 4.5 (Anthropic) - enabled
+    # Max tokens: 32000, Context: 144000
+
+  - model_name: gemini-2.5-pro
+    litellm_params:
+      model: github_copilot/gemini-2.5-pro
+      extra_headers: {"Editor-Version": "vscode/1.85.1", "Copilot-Integration-Id": "vscode-chat"}
+    # Gemini 2.5 Pro (Google) - enabled
+    # Max tokens: 64000, Context: 128000

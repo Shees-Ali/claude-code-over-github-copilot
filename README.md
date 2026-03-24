@@ -45,7 +45,7 @@ make claude-enable
 
 This command:
 - Backs up your existing Claude Code settings
-- Configures Claude Code to use `http://localhost:4444` as the API endpoint
+- Configures Claude Code to use `http://0.0.0.0:4444` as the API endpoint
 - Sets up model mappings (claude-sonnet-4, claude-opus-4, gpt-4)
 
 ### 4. Start the Proxy Server

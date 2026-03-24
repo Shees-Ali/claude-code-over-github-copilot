@@ -57,7 +57,7 @@ stop:
 # Test proxy connection
 test:
 	@echo "Testing proxy connection..."
-	@curl -X POST http://localhost:4444/chat/completions \
+	@curl -X POST http://0.0.0.0:4444/chat/completions \
 		-H "Content-Type: application/json" \
 		-H "Authorization: Bearer $$(grep LITELLM_MASTER_KEY .env | cut -d'=' -f2 | tr -d '\"')" \
 		-d '{"model": "gpt-4", "messages": [{"role": "user", "content": "Hello"}]}'
@@ -102,9 +102,9 @@ claude-status:
 		echo ""; \
 		cat ~/.claude/settings.json | python3 -m json.tool 2>/dev/null || cat ~/.claude/settings.json; \
 		echo ""; \
-		if grep -q "localhost:4444" ~/.claude/settings.json 2>/dev/null; then \
+		if grep -q "http://0.0.0.0:4444" ~/.claude/settings.json 2>/dev/null; then \
 			echo "🔗 Status: Using local proxy"; \
-			if curl -s http://localhost:4444/health >/dev/null 2>&1; then \
+			if curl -s http://0.0.0.0:4444/health >/dev/null 2>&1; then \
 				echo "✅ Proxy server: Running"; \
 			else \
 				echo "❌ Proxy server: Not running (run 'make start')"; \
